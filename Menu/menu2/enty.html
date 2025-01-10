@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML form to Google Sheet</title>
+</head>
+<style>
+    * {
+        font-family: phetsarath ot;
+        text-align: center;
+    }
+
+    .tex_Descriptoin {
+        width: 100%;
+        height: 50px;
+        text-align: start;
+    }
+
+    h1 {
+        text-align: center;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <h1 id="msg"><b><i><u>ບັນທຶກເງິນຖວາຍ</u></i></b></h1>
+    <form class="Form_Entry">
+
+        <label>ID ສະມາຊິກ</label><br>
+        <input type="text" name="Menbers_ID" required>
+        <br><br>
+        <label>ຊື່ ແລະ ນາມສະກູນ</label><br>
+        <input type="text" name="Name" required>
+        <br><br>
+        <label>ສິບລົດ</label><br>
+        <input type="number" name="Tithe" required>
+        <br><br>
+        <label>ທົວໄປ</label><br>
+        <input type="number" name="Sbath" required><br><br>
+
+        <label>ຖວາຍອື່ນໆ</label><br>
+        <input class="tex_Descriptoin" type="number" name="Other" required placeholder='enter your Descriptoin'><br><br>
+        
+        <label>ລວມເງິນທັງໝົດ</label><br>
+        <input class="tex_Descriptoin" type="number" name="Total" required placeholder='enter your Descriptoin'><br><br>
+        
+        <label>ວັນທື</label><br>
+        <input class="tex_Descriptoin" type="date" name="Date" required placeholder='enter your Descriptoin'><br><br>
+
+        <label>ເລກທີ</label><br>
+        <input class="tex_Descriptoin" type="text" name="Receipt_Number" required placeholder='enter your Descriptoin'><br><br>
+
+
+        <center><input type="submit" id="sub" value="ບັນທຶກ"></center>
+
+    </form>
+
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.querySelector("#sub").value = "ກຳລັງບັນທຶກໃສ່ Google Drive ຂອງທ່ານ...";
+            let data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycbzmtr6HCQQ8V9E1Rlu14twR1aEXEpuho5lJSp_WxZmJ6-WXHdfkXyHD7Q-8J6JgSDDtIw/exec', {
+                method: "POST",
+                body: data
+            })
+                .then(response => alert("ການບັນທຶກສຳເລັດຮຽບຮ້ອຍແລ້ວ", location.reload()))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML form to Google Sheet</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
 </head>
 <style>
     * {
@@ -30,23 +31,23 @@
     <form class="Form_Entry">
 
         <label>ID ສະມາຊິກ</label><br>
-        <input type="text" name="Menbers_ID" required>
+        <input type="text" name="Menbers_ID" required placeholder='enter Menbers ID'>
         <br><br>
         <label>ຊື່ ແລະ ນາມສະກູນ</label><br>
-        <input type="text" name="Name" required>
+        <input type="text" name="Name" required placeholder='enter Menbers Name'>
         <br><br>
         <label>ສິບລົດ</label><br>
-        <input type="number" name="Tithe" required>
-        <br><br>
+        <input type="number" class="number" name="Tithe" required placeholder='enter tithe amount'>
+        +<br><br>
         <label>ທົວໄປ</label><br>
-        <input type="number" name="Sbath" required><br><br>
-
+        <input type="number" class="number" name="Sbath" required placeholder='enter sbath amount'>
+        +<br><br>
         <label>ຖວາຍອື່ນໆ</label><br>
-        <input type="number" name="Other" required placeholder='enter your Descriptoin'><br><br>
-        
+        <input type="number" class="number" name="Other" required placeholder='enter Other amount'>
+        =<br><br>
         <label>ລວມເງິນທັງໝົດ</label><br>
-        <input type="number" name="Total" required placeholder='enter your Descriptoin'><br><br>
-        
+        <input type="text" id="total" name="Total"  disabled />
+        <br><br>
         <label>ວັນທື</label><br>
         <input type="date" name="Date" required><br><br>
 
@@ -76,5 +77,18 @@
 </body>
 <script>
     document.addEventListener('contextmenu', event => event.preventDefault()) 
+</script>
+<script>
+	$('.number').keyup(function() {
+     var sum = 0;
+    $('.number').each(function() {
+        sum += Number($(this).val());
+    });
+    $('.number').each(function() {
+        sum += Number($(this).val());
+    });
+    $('#total').val(sum);
+     
+});
 </script>
 </html>

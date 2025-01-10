@@ -42,22 +42,23 @@
         <input type="number" name="Sbath" required><br><br>
 
         <label>ຖວາຍອື່ນໆ</label><br>
-        <input class="tex_Descriptoin" type="number" name="Other" required placeholder='enter your Descriptoin'><br><br>
+        <input type="number" name="Other" required placeholder='enter your Descriptoin'><br><br>
         
         <label>ລວມເງິນທັງໝົດ</label><br>
-        <input class="tex_Descriptoin" type="number" name="Total" required placeholder='enter your Descriptoin'><br><br>
+        <input type="number" name="Total" required placeholder='enter your Descriptoin'><br><br>
         
         <label>ວັນທື</label><br>
-        <input class="tex_Descriptoin" type="date" name="Date" required placeholder='enter your Descriptoin'><br><br>
+        <input type="date" name="Date" required><br><br>
 
         <label>ເລກທີ</label><br>
-        <input class="tex_Descriptoin" type="text" name="Receipt_Number" required placeholder='enter your Descriptoin'><br><br>
+        <input  type="text" name="Receipt_Number" required placeholder='enter Receipt_Number'><br><br>
 
 
         <center><input type="submit" id="sub" value="ບັນທຶກ"></center>
 
     </form>
-
+    <hr>
+<iframe src="Entry_history.html" width="100%" height="500px" frameborder="0"></iframe>
     <script>
         let form = document.querySelector("form");
         form.addEventListener('submit', (e) => {
@@ -73,5 +74,7 @@
         })
     </script>
 </body>
-
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault()) 
+</script>
 </html>

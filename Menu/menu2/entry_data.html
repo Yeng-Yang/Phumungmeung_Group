@@ -36,9 +36,6 @@
         <label>ID ສະມາຊິກ</label><br>
         <input type="text" name="Menbers_ID" required placeholder='enter Menbers ID'>
         <br><br>
-        <label>ຊື່ ແລະ ນາມສະກູນ</label><br>
-        <input type="text" name="Name" required placeholder='enter Menbers Name'>
-        <br><br>
         <label>ສິບລົດ</label><br>
         <input type="number" class="number" name="Tithe" required placeholder='enter tithe amount'>
         <br><br>
@@ -67,9 +64,9 @@
         let form = document.querySelector("form");
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            document.querySelector("#sub").value = "ກຳລັງບັນທຶກໃສ່ Google Drive ຂອງທ່ານ...";
+            document.querySelector("#sub").value = "ກຳລັງບັນທຶກໃສ່ຖັງຂໍ້ມູນ...";
             let data = new FormData(form);
-            fetch('https://script.google.com/macros/s/AKfycbzmtr6HCQQ8V9E1Rlu14twR1aEXEpuho5lJSp_WxZmJ6-WXHdfkXyHD7Q-8J6JgSDDtIw/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbztmp1y9eYUqv10o0uUrZMArZP_ygundYN5L6lKSNTrB0ya4RTZClkjRDQqKv89L-mXoQ/exec', {
                 method: "POST",
                 body: data
             })

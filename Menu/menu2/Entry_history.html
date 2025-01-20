@@ -54,10 +54,7 @@
     <div class="container">
         <table id="example" class="table table-condensed table-striped"></table>
     </div>
-    <!-- Main JavaScript File -->
-    <?!= include('script') ?>
 
-    <!-- JavaScript DataTable -->
     <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.2.1/js/dataTables.searchBuilder.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.2.1/js/searchBuilder.bootstrap5.min.js"></script>
@@ -74,7 +71,7 @@
     // Load top ten switch hitters.
     $('#example').sheetrock({
         url: mySpreadsheet,
-        query: ("select A,B,C,D,E,F,G,H,I offset 1"),
+        query: ("select A,B,C,D,E,F,G,H offset 1"),
     }).on('sheetrock:loaded', function () {
         $(this).DataTable({
 
@@ -87,7 +84,6 @@
             columns: [
                 { title: "ເລກທີ" },
                 { title: "ລະຫັດ ID ສະມາຊິກ" },
-                { title: "ຊຶ່ ແລະ ນາມສະກູນ" },
                 { title: "ເບີໂທ" },
                 { title: "ສິບລົດ" },
                 { title: "ທົ່ວໄປ" },
@@ -96,7 +92,7 @@
                 {
                     title: "ບີນຮັບເງິນ",
                     render: function (data, type, row, meta) {
-                        return '<a href="' + data + '">ພາບການເຄື່ອນໄຫວ</a>';
+                        return '<a href="Error_Code.html">ພາບການເຄື່ອນໄຫວ</a>';
                     },
                 },
             ],

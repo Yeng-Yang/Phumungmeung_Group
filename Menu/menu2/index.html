@@ -45,17 +45,13 @@
 
 
 <body><br>
-	<center>
+  <center>
     <h1>ລາຍຊື່ສະມາຊິກ</h1>
 	</center>
-    <a href=""></a>
 <div class="container">
 <table id="example" class="table table-condensed table-striped"></table>
 </div>
-<!-- Main JavaScript File -->
-<?!= include('script') ?>
 
-<!-- JavaScript DataTable -->
 <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/searchbuilder/1.2.1/js/dataTables.searchBuilder.min.js"></script>
 <script src="https://cdn.datatables.net/searchbuilder/1.2.1/js/searchBuilder.bootstrap5.min.js"></script>
@@ -93,7 +89,8 @@
           { title: "ລວມເງິນ" },
           { title: "ຮູບພາບ ປະຈຳຕົວ",
               render: function (data, type, row, meta) {
-                return '<a href="' + data + '">ພາບການເຄື່ອນໄຫວ</a>';
+                return '<a href="Error_Code.html">ພາບປະຈຳຕົວ</a>';
+                
               },
             },
           ],

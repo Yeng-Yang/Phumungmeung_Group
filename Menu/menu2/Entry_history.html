@@ -71,7 +71,7 @@
     // Load top ten switch hitters.
     $('#example').sheetrock({
         url: mySpreadsheet,
-        query: ("select A,B,C,D,E,F,G,H offset 1"),
+        query: ("select A,B,C,D,E,F,G offset 1"),
     }).on('sheetrock:loaded', function () {
         $(this).DataTable({
 
@@ -84,7 +84,6 @@
             columns: [
                 { title: "ເລກທີ" },
                 { title: "ລະຫັດ ID ສະມາຊິກ" },
-                { title: "ເບີໂທ" },
                 { title: "ສິບລົດ" },
                 { title: "ທົ່ວໄປ" },
                 { title: "ອື່ນໆ" },

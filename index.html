@@ -93,7 +93,7 @@
     // Load top ten switch hitters.
     $('#example').sheetrock({
         url: mySpreadsheet,
-        query: ("select A,B,C,D,E,F,G,H offset 1"),
+        query: ("select H,A,B,C,D,E,F,G offset 1"),
     }).on('sheetrock:loaded', function () {
         $(this).DataTable({
 
@@ -103,6 +103,12 @@
             //sPaginationType: "full_numbers",
             // กำหนดหัวคอลัมภ์โดยตั้งชื่อเอง
             columns: [
+                {
+                    title: "ພາບປະຈຳຕົວ",
+                    render: function (data, type, row, meta) {
+                        return '<a href="' + data + '" target="_blank"><img src="' + data + '" alt="thumbnail image" width="60px" height="70px"></a>';
+                    },
+                },
                 { title: "ລະຫັດ ID ສະມາຊິກ" },
                 { title: "ຊື່ ແລະ ນາມສະກຸນ" },
                 { title: "ທີ່ຢູ່ນ" },
@@ -110,12 +116,7 @@
                 { title: "ທົ່ວໄປ" },
                 { title: "ຖວາຍພິເສດສຳລັບຄ່າໃຊ້ຈ່າຍໂບດ" },
                 { title: "ລວມເງິນ" },
-                {
-                    title: "ພາບປະຈຳຕົວ",
-                    render: function (data, type, row, meta) {
-                        return '<a href="' + data + '" target="_blank"><img src="' + data + '" alt="thumbnail image" width="60px" height="70px"></a>';
-                    },
-                },
+                
             ],
             language: {
                 sProcessing: "กำลังดำเนินการ...",
